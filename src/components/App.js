@@ -44,7 +44,7 @@ class App extends React.Component {
 
     // LOADING PAGE SHOWS WHILE PHOTOS ARE BEING FETCHED
     this.setState({ loading: true }); 
-    queries = this.defaultSearchTerms.map(term => encodeURIComponent(term));
+    queries = this.defaultButtons.map(term => encodeURIComponent(term));
 
     for (let i = 0; i < queries.length; i++) {
       apiRequests[i] = fetch(`https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${queries[i]}&per_page=24&format=json&nojsoncallback=1`)
@@ -88,5 +88,61 @@ class App extends React.Component {
     }
   }
 
+
+
+  /*
+      This will execute the intial search for the site - the query is either the intials setup search for the three buttons
+      //or the term entered in the search form, which will be a param in the URL.
+    */
+  componentDidMount() {
+    const thisPath = this.props.location.pathname;
+    const query = (thisPath.indexOf('/search/') > -1) ? thisPath.replace('/search/', '') : 'initial setup';
+    this.performSearch(query);
+  }
+
+  /*
+    This will execute a s new API request if the back or forward browser history button is pressed and
+    the URL contains a search parameter for a term entered in the search form  
+  */
+  componentDidUpdate(prevProps) {
+    const prevPath = prevProps.location.pathname;
+    const thisPath = this.props.location.pathname;
+    
+    if (thisPath.indexOf('/search/') > -1) {
+      if (thisPath !== prevPath) {
+        const query = thisPath.replace('/search/', '')
+        this.performSearch(query);
+      }
+    }
+  }
+
+  render () {
+    return (
+      <div className="container">
+        <Route
+          render={ (props) => <Header {...props} 
+                    buttonText={this.initialSearchTerms} 
+                    search={this.performSearch} 
+        />} />
+        <Route
+          render={ () => <Nav buttonText={this.initialSearchTerms} />} />
+        <Route exact path='/' 
+          render={ () => <Redirect to="/button1" />} />
+        <Switch>  
+          <Route path="/button1" 
+              render={ () => <Gallery gallery={this.state.button1} loading={this.state.loading} /> } />
+          <Route path="/button2" 
+              render={ () => <Gallery gallery={this.state.button2} loading={this.state.loading} /> } />
+          <Route path="/button3" 
+              render={ () => <Gallery gallery={this.state.button3} loading={this.state.loading} /> } />
+          <Route path="/search/:searchTerm"
+              render={ () => <Gallery gallery={this.state.search} loading={this.state.loading} /> } />
+          <Route component={NotFound} />
+        </Switch>
+      </div>
+    );
+  }
+
 }
+
 export default App;
