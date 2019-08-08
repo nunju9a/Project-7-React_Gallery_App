@@ -12,7 +12,7 @@ class Header extends Component {
 
     switch(thisPath) {
       case '/button1':
-        searchText += `Puppies`
+        searchText += `Dogs`
         break;
       case '/button2':
         searchText += `Sunsets`
