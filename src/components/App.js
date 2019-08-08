@@ -91,20 +91,14 @@ class App extends React.Component {
 
 
 
-  /*
-      This will execute the intial search for the site - the query is either the intials setup search for the three buttons
-      //or the term entered in the search form, which will be a param in the URL.
-    */
+  // INITIAL SEARCH WHEN SITE LOADS
   componentDidMount() {
     const thisPath = this.props.location.pathname;
     const query = (thisPath.indexOf('/search/') > -1) ? thisPath.replace('/search/', '') : 'initial setup';
     this.performSearch(query);
   }
 
-  /*
-    This will execute a s new API request if the back or forward browser history button is pressed and
-    the URL contains a search parameter for a term entered in the search form  
-  */
+  // NEW API REQUESTI IF BACK OR FORWARD BUTTON PRESSED
   componentDidUpdate(prevProps) {
     const prevPath = prevProps.location.pathname;
     const thisPath = this.props.location.pathname;
@@ -116,7 +110,7 @@ class App extends React.Component {
       }
     }
   }
-
+  // RENDERING HEADER WITH BUTTONS AND SEARCH
   render () {
     return (
       <div className="container">
