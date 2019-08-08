@@ -5,7 +5,7 @@ import {NavLink} from "react-router-dom";
 const Nav = () => (
     <nav className="main-nav">
         <ul>
-            <li> <NavLink to="/button1"> Puppies </NavLink> </li>
+            <li> <NavLink to="/button1"> Dogs </NavLink> </li>
             <li> <NavLink to="/button2"> Sunsets </NavLink> </li>
             <li> <NavLink to="/button3"> Roller Coasters </NavLink> </li>
         </ul>

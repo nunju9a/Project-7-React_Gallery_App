@@ -7,6 +7,7 @@ import Nav from './Nav';
 import NotFound from './NotFound';
 import Gallery from './photos/Gallery';
 import apiKey from '../config.js';
+import '../index.css';
 
 class App extends React.Component {
  
@@ -20,7 +21,7 @@ class App extends React.Component {
   }
 
   // ORIGINAL 3 BUTTONS DISPLAYING 3 DIFFERENT SEARCH OPTIONS
-  defaultButtons = ["Puppies", "Sunsets", "Roller Coasters"];
+  defaultButtons = ["Dogs", "Sunsets", "Roller Coasters"];
 
    // CREATING URL FOR EACH PHOTO FETCHED
   handlePhotoResponse(searchName, imageData) {
