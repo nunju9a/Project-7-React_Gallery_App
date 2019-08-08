@@ -23,5 +23,4 @@ const Gallery = props => {
         </div>
     );
 }
-
 export default Gallery;
