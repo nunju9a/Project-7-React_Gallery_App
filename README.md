@@ -1,3 +1,17 @@
+In this project I used React and requested API from from Flickr to display 24 pictures at a time. There are 3 default buttons - Dogs, Sunsets, and Roller Coaster. Also the user can search for any term and an API request will be made to display 24 pictures of their search result.
+
+This project was built with create-react-app and react-router-dom. 
+
+In order to run you will need to have node and npm. You will also need to create a config.js and put it in the /src folder. The config.js must contain:
+
+` const apiKey = 'YOUR API KEY' ;`
+` export default apiKey; `
+
+You will also need to run in the terminal:
+
+` npm install --save react-router-dom `
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
