@@ -9,7 +9,7 @@ In order to run you will need to have node and npm. You will also need to create
 
 You will also need to run in the terminal:
 
-` npm install --save react-router-dom `
+` npm install `
 
 Finally  run `npm start` to start the server and view in `localhost:3000`
 
