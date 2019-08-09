@@ -11,13 +11,13 @@ class Header extends Component {
     const thisPath = this.props.location.pathname;
 
     switch(thisPath) {
-      case '/button1':
+      case '/dogs':
         searchText += `Dogs`
         break;
-      case '/button2':
+      case '/sunsets':
         searchText += `Sunsets`
         break;
-      case '/button3':
+      case '/rollercoasters':
         searchText += `Roller Coasters`
         break;
       default:

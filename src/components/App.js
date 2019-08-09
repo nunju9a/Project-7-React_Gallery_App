@@ -89,8 +89,6 @@ class App extends React.Component {
     }
   }
 
-
-
   // INITIAL SEARCH WHEN SITE LOADS
   componentDidMount() {
     const thisPath = this.props.location.pathname;
@@ -110,7 +108,7 @@ class App extends React.Component {
       }
     }
   }
-  // RENDERING HEADER WITH BUTTONS AND SEARCH
+  // RENDERING HEADER WITH BUTTONS AND SEARCH INPUT
   render () {
     return (
       <div className="container">
@@ -122,13 +120,13 @@ class App extends React.Component {
         <Route
           render={ () => <Nav buttonText={this.initialSearchTerms} />} />
         <Route exact path='/' 
-          render={ () => <Redirect to="/button1" />} />
+          render={ () => <Redirect to="/dogs" />} />
         <Switch>  
-          <Route path="/button1" 
+          <Route path="/dogs" 
               render={ () => <Gallery gallery={this.state.button1} loading={this.state.loading} /> } />
-          <Route path="/button2" 
+          <Route path="/sunsets" 
               render={ () => <Gallery gallery={this.state.button2} loading={this.state.loading} /> } />
-          <Route path="/button3" 
+          <Route path="/rollercoasters" 
               render={ () => <Gallery gallery={this.state.button3} loading={this.state.loading} /> } />
           <Route path="/search/:searchTerm"
               render={ () => <Gallery gallery={this.state.search} loading={this.state.loading} /> } />
@@ -139,5 +137,4 @@ class App extends React.Component {
   }
 
 }
-
 export default App;
