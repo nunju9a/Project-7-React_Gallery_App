@@ -11,6 +11,8 @@ You will also need to run in the terminal:
 
 ` npm install --save react-router-dom `
 
+Finally  run `npm start` to start the server and view in `localhost:3000`
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
