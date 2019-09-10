@@ -1,4 +1,7 @@
-In this project I used React and requested API from from Flickr to display 24 pictures at a time. There are 3 default buttons - Dogs, Sunsets, and Roller Coaster. Also the user can search for any term and an API request will be made to display 24 pictures of their search result.
+# React Gallery App 
+- Received grade of "Exceeds Expectations"
+
+In this project I used React and requested an API from Flickr to display 24 pictures at a time. There are 3 default buttons - Dogs, Sunsets, and Roller Coaster. Also, the user can search for any term and an API request will be made to display 24 pictures of their search result.
 
 This project was built with create-react-app and react-router-dom. 
 
